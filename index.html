@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script defer src="script.js"></script>
+        <title>WoD Dice Roller</title>
+    </head>
+    <body>
+        <div class="container d-flex flex-column align-items-center">
+            <h1 class="text-center m-4">WoD Dice Roller</h1>
+
+            <form class="w-50">
+                <div
+                    id="numDiceAlert"
+                    class="alert alert-danger d-none"
+                    role="alert"
+                >
+                    The minimum number of dice is 1.
+                </div>
+                <div class="form-group mb-3">
+                    <label for="numDice"
+                        >How many dice would you like to roll (minimum
+                        1)?</label
+                    >
+                    <input
+                        type="number"
+                        id="numDice"
+                        class="form-control"
+                        min="1"
+                        value="1"
+                    />
+                </div>
+                <div
+                    id="successValueAlert"
+                    class="alert alert-danger d-none"
+                    role="alert"
+                >
+                    The DC must be a number between 1 and 10.
+                </div>
+                <div class="form-group mb-3">
+                    <label for="successValue">What is the DC?</label>
+                    <input
+                        type="number"
+                        id="successValue"
+                        class="form-control"
+                        min="1"
+                        max="10"
+                        value="1"
+                    />
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="nineAgain"
+                        value="nineAgain"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                        >9 again</label
+                    >
+                </div>
+                <div class="form-check form-check-inline mb-3">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="eightAgain"
+                        value="eightAgain"
+                        disabled
+                    />
+                    <label class="form-check-label" for="inlineCheckbox2"
+                        >8 again</label
+                    >
+                </div>
+                <button
+                    id="rollDice"
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-block"
+                >
+                    Roll!
+                </button>
+                <button
+                    id="resetForm"
+                    type="reset"
+                    class="btn btn-secondary btn-lg btn-block"
+                >
+                    Reset
+                </button>
+            </form>
+            <div id="results" class="card mt-5 w-50"></div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
