@@ -93,13 +93,22 @@ function showResults(rolls, numSuccesses) {
     // Reset results div
     resultsDiv.innerHTML = "";
 
+    let titleText;
+    if (numSuccesses > 1) {
+        titleText = `${numSuccesses} Successes`;
+    } else if (numSuccesses === 1) {
+        titleText = "1 Success";
+    } else {
+        titleText = "No Successes";
+    }
+
     // Create results display
     const resultsCardBody = document.createElement("div");
     resultsCardBody.setAttribute("class", "card-body");
 
     const resultsCardTitle = document.createElement("h2");
     resultsCardTitle.setAttribute("class", "card-title text-center");
-    resultsCardTitle.textContent = `${numSuccesses} Successes`;
+    resultsCardTitle.textContent = titleText;
 
     resultsCardBody.appendChild(resultsCardTitle);
 
